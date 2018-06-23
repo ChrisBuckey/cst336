@@ -1,0 +1,65 @@
+@charset "UTF-8";
+
+body {
+    background-color: gray;
+    color: black;
+    font-size:1em;
+}
+
+header {
+    text-align: center;
+}
+
+strong {
+    font-weight:bold;
+}
+
+nav {
+    background-color: orange;
+    margin: 0 auto;
+}
+
+nav a {
+    color: black;
+    text-align: center;
+}
+
+nav a:hover {
+    background-color: yellow;
+} 
+
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+ul li {
+    list-style-type: square;
+}
+
+#welcomeText {
+    color:black;
+    font-size:1.5em;
+}
+
+#sourceTitle {
+    color:white;
+    text-align: center;
+}
+
+#source {
+    color:blue;
+    font-size:0.5em;
+}
+
+figcaption {
+    color:red;
+    font-size:1.5em;
+    text-align:center;
+}
+
+
+    
+    
