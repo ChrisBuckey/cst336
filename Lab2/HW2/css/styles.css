@@ -1,0 +1,24 @@
+@charset "UTF-8";
+
+body {
+    background-image: url("img/greenfelt.jpg");
+    background-repeat: repeat;
+    background-color: green;
+}
+
+h1{
+    color: #FFD700;
+    font-size:3em;
+    text-align: center;
+    }
+
+form {
+    margin: 0 auto;
+    width: 1000px;
+}
+
+#main{
+    margin: 0 auto;
+}
+
+
