@@ -24,7 +24,7 @@ function displayCards(){
     }
     
     for($i=0; $i < 5; $i++){  //displays the cards in the hand array
-        echo "<img src='img/'".$hand[$i].".png alt='card' width='200'/>";
+        echo "<img src='img/".$hand[$i].".png' alt='card' width='200'/>";
     }
 }
 ?>
