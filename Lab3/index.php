@@ -1,15 +1,21 @@
 <?php
     $backgroundImage="img/sea.jpg";
-
     
-    if (isset($_GET['keyword'])){
+    
+    if(empty($_GET['keyword']) && empty($_GET['category'])){
+        echo "Please enter a keyword or a layout";
+    }
+    elseif(isset($_GET['category'])){  //if user selects category, searches for category
+        include 'api/pixabayAPI.php';
+        $keyword = $_GET['category'];
+        $imageURLs = getImageURLs($_GET['category'], $_GET['layout']);
+        $backgroundImage = $imageURLs[array_rand($imageURLs)]; //sets background image with random image from collected images
+    }
+    elseif (isset($_GET['keyword'])){  //if user selects keyword, searches for keyword
         include 'api/pixabayAPI.php';
         $keyword = $_GET['keyword'];
         $imageURLs = getImageURLs($_GET['keyword'], $_GET['layout']);
         $backgroundImage = $imageURLs[array_rand($imageURLs)]; //sets background image with random image from collected images
-        foreach($ImageURLs as $img){
-            echo $img;
-        }
     }
 ?>
 
@@ -35,7 +41,7 @@
                 echo "<h2> Type a keyword to display a slideshow <br /> with random images from Pixabay.com </h2>";
             }
             else{
-        
+            }    
         ?>
         
         <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
@@ -74,24 +80,24 @@
             <span class="sr-only">Next</span>
         </a>
         </div>
-        <?php
-        }
-        ?>
         <br>
         
         <form>
             <input type="text" name="keyword" placeholder="keyword" value="<?=$_GET['keyword']?>"/>
+            
             <input type="radio" id="lhorizontal" name="layout" value="horizontal">
+            
             <label for="Horizontal"></label><label for="lhorizontal">Horizontal</label>
+            
             <input type="radio" id="lvertical" name="layout" value="vertical">
+            
             <label for="Vertical"></label><label for="lvertical">Vertical</label>
-
             <select name = "category">
                 <option value ="">Select One</option>
-                <option value="Ocean">Sea</option>
-                <option value="Forest">Forest</option>
-                <option value="Mountain">Mountain</option>
-                <option value="Snow">Snow</option>
+                <option value="ocean">Sea</option>
+                <option>Forest</option>
+                <option>Mountain</option>
+                <option>Snow</option>
             </select>
             <input type="submit" value="Search"/>
         </form>
