@@ -41,7 +41,7 @@
                 echo "<h2> Type a keyword to display a slideshow <br /> with random images from Pixabay.com </h2>";
             }
             else{
-            }    
+        
         ?>
         
         <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
@@ -80,16 +80,19 @@
             <span class="sr-only">Next</span>
         </a>
         </div>
+        <?php
+        }
+        ?>
         <br>
         
         <form>
-            <input type="text" name="keyword" placeholder="keyword" value="<?=$_GET['keyword']?>"/>
-            <input type="radio" id="lhorizontal" name="layout" value="horizontal">
+            <input type="text" name="keyword" placeholder="keyword" value="<?=$_GET['keyword']?>"/>  <!--keyword input-->
+            <input type="radio" id="lhorizontal" name="layout" value="horizontal">  <!--radio button for horizontal-->
             <label for="Horizontal"></label><label for="lhorizontal">Horizontal</label>
-            <input type="radio" id="lvertical" name="layout" value="vertical">
+            <input type="radio" id="lvertical" name="layout" value="vertical">  <!--radio button for vertical-->
             <label for="Vertical"></label><label for="lvertical">Vertical</label>
 
-            <select name = "category">
+            <select name = "category">  <!--dropdown menu for input-->
                 <option value ="">Select One</option>
                 <option value="Ocean">Sea</option>
                 <option value="Forest">Forest</option>
