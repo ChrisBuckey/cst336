@@ -17,7 +17,7 @@ echo "Chris Buckey's Assignments for CST 336"
 
 <a href="HW1">Homework 1</a>
 <a href="HW2">Homework 2</a>
-
+<a href="HW3">Homework 3</a>
 
 </body> 
 </html>
