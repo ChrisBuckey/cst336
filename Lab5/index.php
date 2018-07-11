@@ -29,28 +29,28 @@ function displaySearchResults(){
         $sql = "Select * FROM om-product WHERE 1";
         
         if(!empty($_GET['product'])){
-            $sql.= " AND productName LIKE :productName";
+            $sql .= " AND productName LIKE :productName";
             $namedParameters[":productName"] = "%" . $_GET['product'] . "%";
         }
         
         if(!empty($_GET['category'])){
-            $sql.= " AND catId LIKE :categoryId";
-            $namedParameters[":categoryId"] = "%" . $_GET['category'];
+            $sql .= " AND catId LIKE :categoryId";
+            $namedParameters[":categoryId"] = $_GET['category'];
         }
         
         if(!empty($_GET['priceFrom'])){
-            $sql.= " AND price >= :priceFrom";
+            $sql .= " AND price >= :priceFrom";
             $namedParameters[":priceFrom"] = $_GET['priceFrom'];
         }
         
         if(!empty($_GET['priceTo'])){
-            $sql.= " AND price <= :priceTo";
+            $sql .= " AND price <= :priceTo";
             $namedParameters[":priceTo"] = $_GET['priceTo'];
         }
         
         if(isset($_GET['orderBy'])){
             if($_GET['orderBy'] == "price"){
-                $sql .= " Order BY price";
+                $sql .= " ORDER BY price";
             }
             else{
                 $sql .= " ORDER BY productName";
@@ -63,7 +63,7 @@ function displaySearchResults(){
         
         foreach($records as $record){
             
-            echo "<a href=\"purchaseHistory.php?productId=".$record["productId"]. "\"> History </a>";
+            echo "<a href=\"purchaseHistory.php?productId=".$record["productId"] . "\"> History </a>";
             
             echo $record["productName"] . " " . $record["product Description"] . " $" . $record["price"] . "<br /><br />";
         }

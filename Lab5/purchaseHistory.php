@@ -1,12 +1,12 @@
 <?php 
 
-include '../dbConnection.php';
+include 'dbConnection.php';
 
 $conn = getDatabaseConnection("ottermart");
 
 $productId = $_GET['productId'];
 
-$sql = "SELECT * FROM om_product NATURAL JOIN om-Purchase WHERE productId = :pId";
+$sql = "SELECT * FROM om_product NATURAL JOIN om-purchase WHERE productId = :pId";
 
 $np = array();
 $np[":pId"] = $productId;
