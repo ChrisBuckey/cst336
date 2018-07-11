@@ -6,14 +6,14 @@ $conn = getDatabaseConnection("ottermart");
 function displayCategories(){
     global $conn;
     
-    $sql = "SELECT catID, catName from om_category ORDER_BY catName";
+    $sql = "SELECT catID, catName from om_category ORDER BY catName";
     
     $stmt = $conn->prepare($sql);
     $stmt->execute();
     $records = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
     foreach($records as $record){
-        echo "<option value='".$record["catId"]."'>" . $record["catName"] . "</option>option>";
+        echo "<option value='".$record["catId"]."'>" . $record["catName"] . "</option>";
     }
 }
 
@@ -90,6 +90,7 @@ function displaySearchResults(){
                 Category:
                     <select name="category">
                         <option value="">Select One</option>
+                        <?=displayCategories()?>
                     </select>
                 <br>
                 Price From <input type="text" name="priceFrom" size="7"/>
