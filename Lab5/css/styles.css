@@ -1,0 +1,14 @@
+body{
+    background-color: #FAEBD7;
+    color: black;
+    font-size: 1em;
+}
+
+h1{
+    font-size: 2em;
+    text-align: center;
+}
+
+.submitwrapper{
+    margin: 0 auto;
+}

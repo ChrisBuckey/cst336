@@ -26,7 +26,7 @@ function displaySearchResults(){
         
         $namedParameters = array();
         
-        $sql = "Select * FROM om-product WHERE 1";
+        $sql = "Select * FROM om_product WHERE 1";
         
         if(!empty($_GET['product'])){
             $sql .= " AND productName LIKE :productName";
@@ -34,7 +34,7 @@ function displaySearchResults(){
         }
         
         if(!empty($_GET['category'])){
-            $sql .= " AND catId LIKE :categoryId";
+            $sql .= " AND catId = :categoryId";
             $namedParameters[":categoryId"] = $_GET['category'];
         }
         
@@ -55,7 +55,8 @@ function displaySearchResults(){
             else{
                 $sql .= " ORDER BY productName";
             }
-        }        
+        }
+
         //fetch the data
         $stmt = $conn->prepare($sql);
         $stmt->execute($namedParameters);
@@ -65,7 +66,7 @@ function displaySearchResults(){
             
             echo "<a href=\"purchaseHistory.php?productId=".$record["productId"] . "\"> History </a>";
             
-            echo $record["productName"] . " " . $record["product Description"] . " $" . $record["price"] . "<br /><br />";
+            echo $record["productName"] . " " . $record["productDescription"] . " $" . $record["price"] . "<br /><br />";
         }
     }
 }
@@ -99,11 +100,13 @@ function displaySearchResults(){
                 Order result by:
                 <br>
                 
-                <input type="radio" name="OrderBy" value="price"> Price <br>
-                <input type="radio" name="OrderBy" value="name"> Name    
+                <input type="radio" name="orderBy" value="price"> Price <br>
+                <input type="radio" name="orderBy" value="name"> Name    
 
                 <br><br>
-                <input type="submit" value="search" name="searchform" />
+                <div class="submitwrapper">
+                <input type="submit" value="Search" name="searchForm" />
+                </div>
             </form>
     
             <br />
@@ -111,6 +114,6 @@ function displaySearchResults(){
         </div>
     
         <hr>
-    <?= displaySearchResults() ?>
+    <?=displaySearchResults()?>
     </body>
 </html>
