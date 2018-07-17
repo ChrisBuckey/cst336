@@ -51,16 +51,27 @@ if (isset($_GET['updateProduct'])){
 
 ?>
 
-<form>
-    <input type="hidden" name="productID" value="<?=$product['productID']?>"/>
-    <strong>Product Name</strong> <input type="text" class="form-control" value="<?=$product['productName']?>" name="productName"><br>
-    <strong>Description</strong> <textarea name="description" class="form-control" cols=50 rows=4> <?=$product['productDescription']?> </textarea><br>
-    <strong>Price</strong> <input type="text" class="form-control" name="price" value="<?=$product['price']?>"><br>
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Update a Product</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css">
+</head>
+
+<body>
+    <form>
+        <input type="hidden" name="productID" value="<?=$product['productID']?>"/>
+        <strong>Product Name</strong> <input type="text" class="form-control" value="<?=$product['productName']?>" name="productName"><br>
+        <strong>Description</strong> <textarea name="description" class="form-control" cols=50 rows=4> <?=$product['productDescription']?> </textarea><br>
+        <strong>Price</strong> <input type="text" class="form-control" name="price" value="<?=$product['price']?>"><br>
     
-    <strong>Category</strong><select name="catId" class="form-control">
-        <option>Select One</option>
-        <?php getCategories($product['catId']); ?>
-    </select><br />
-    <strong>Set Image URL</strong><input type="text" class="form-control" name="productImage" value="<?=$product['productImage']?>" /><br>
-    <input type="submit" class='btn btn-primary' name="updateProduct" value="Update Product">
-</form>
+        <strong>Category</strong><select name="catId" class="form-control">
+            <option>Select One</option>
+            <?php getCategories($product['catId']); ?>
+        </select><br />
+        <strong>Set Image URL</strong><input type="text" class="form-control" name="productImage" value="<?=$product['productImage']?>" /><br>
+        <input type="submit" class='btn btn-primary' name="updateProduct" value="Update Product">
+    </form>
+</body>
+</html>

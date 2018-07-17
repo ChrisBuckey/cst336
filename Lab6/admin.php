@@ -20,13 +20,26 @@
     }
 ?>
 
-<form action = "addProduct.php">
-    <input type="submit" class='btn btn-secondary' id="beginning" name="addproduct" value="Add Product"/>
-</form>
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <title>Administration</title>
+        <link rel="stylesheet" type="text/css" href="styles.css"/>
+        <script>
+            function confirmDelete(){
+            return confirm("Are you sure you want to delete the product?");
+            }
+        </script>
+    </head>
+    <body>
+        <form action = "addProduct.php">
+            <input type="submit" class='btn btn-secondary' id="beginning" name="addproduct" value="Add Product"/>
+        </form>
 
-<form action="logout.php">
-    <input type="submit" class = 'btn btn-secondary' id="beginning" value="Logout"/>
-</form>
+        <form action="logout.php">
+            <input type="submit" class = 'btn btn-secondary' id="beginning" value="Logout"/>
+        </form>
 
 <?php
     $records = displayAllProducts();
@@ -60,3 +73,5 @@
     echo "</table> ";
 ?>
 
+    </body>
+</html>
