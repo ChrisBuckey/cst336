@@ -25,7 +25,7 @@
     
     <head>
         <title>Administration</title>
-        <link rel="stylesheet" type="text/css" href="styles.css"/>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css">
         <script>
             function confirmDelete(){
             return confirm("Are you sure you want to delete the product?");

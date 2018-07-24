@@ -10,6 +10,9 @@
     $username = $_POST['username'];
     $password = sha1($_POST['password']);
     
+    echo $username;
+    echo $password;
+    
     $sql = "SELECT * FROM om_admin WHERE username = :username AND password = :password";
     
     $np = array();
