@@ -1,0 +1,93 @@
+<!DOCTYPE HTML>
+<html lang="en">
+    <head>
+	    <meta charset="utf-8">
+	    <title>Bankruptcy Form</title>
+	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	    <script src="functions.js"></script>
+	    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	    <link rel="stylesheet" type="text/css" href="styles.css">
+    </head>
+
+    <body>
+        <form>
+            <!--Dropbox - How many people are living in your houselhold?  -->
+            <p name="question">How many people are currently living with you?</p>
+            <select class="livingwithyou" placeholder="# of People Living WIth You">
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            </select>
+            <br>
+
+            <!--Are your debts primaarily consumer debts (as defined in 11 U.S.C. Section 101(8) -->
+            <p name="question">Are your debts primarily consumer debts as defined in the United States Code, Section 101(8)?</p>
+            <label for="yesconsumer">Yes</label>
+            <input type="radio" name="consumer" id="yesconsumer" value="yes">
+            <label for="noconsumer">No</label>
+            <input type="radio" name="consumer" id="noconsumer" value="no"><br>
+
+            <!--Are you a disabled veteran and, if so, did you incur these debts while on active service? -->
+            <p name="question">Are you a disabled veteran and, if so, did you incur the debt from the time you were in service?</p>
+            <label for="yesdisabled">Yes</label>
+            <input type="radio" name="disabled" id="yesdisabled" value="yes">
+            <label for="nodisabled">No</label>
+            <input type="radio" name="disabled" id="nodisabled" value="no"><br>
+
+            <!--Are you a member of the Army Reserve, or the National Guard? -->
+            <p name="question">Are you a Reservist, or a member of the National Guard?</p>
+            <label for="yesarmy">Yes</label>
+            <input type="radio" name="army" id="yesarmy" value="yes">
+            <label for="noarmy">No</label>
+            <input type="radio" name="army" id = "noarmy" value="no"><br>
+
+            <br /><br />
+
+            <h3 name="explanation">Please enter the amount of income you earn from the given activities per month.  Please use only numbers, no commas or dollar signs</h3>
+            <!--1.  Maritial Status of filing -->
+            <p name="question">Are you filing for bankruptcy with or without your spouse?</p>
+            <label for="yesmarried">With Spouse</label>
+            <input type="radio" name="married" id="yesmarried" value="yes">
+            <label for="nomarried">Without Spouse</label>
+            <input type="radio" name="married" id = "nomarried" value="no"><br><br>
+
+            <!--2.  Gross Wages, salary, tips, bonuses overtime, comissions -->
+            Gross Wages, Salary, Tips, Bonuses, Overtime, Commissions: <input type="text" class="startingincome"><br><br>
+
+            <!--3.  Alimony and maintenance payments -->
+            Alimony and Maintenance Payments: <input type="text" class="alimony"><br><br>
+
+            <!--4.  Amounts that other people pay you reguarily -->
+            Money that other people pay you regularly: <input type="text" class="freeloadin"><br><br>
+
+            <!--5.  Net income from rental and other real property -->
+            Net income from rental and other property: <input type="text" class="rentalincome"><br><br>
+
+            <!--6.  Interest, dividends, royalties -->
+            Income received from interest, dividends, royalties, etc: <input type="text" class="interestetc"><br><br>
+
+            <!--7.  Net income from business, profession, or farm -->
+            Income from your own business, freelancing profession, or farm: <input type="text" class="businessincome"><br><br>
+
+            <!--8.  Unemployment compensation -->
+            Income received from unemployment compensation: <input type="text" class="unemployment"><br><br>
+
+            <!--9.  Pension or retirment income -->
+            Income received from pension and retirement: <input type="text" class="retirement"><br><br>
+
+            <!--10.  Income from all other sources not listed above  -->
+            Income from all other sources not listed above: <input type="text" class="everythingelseincome"><br><br>
+            
+            <input type="button" value="Submit" onclick="calculateMeans()"/>
+        </form>
+        <div id="results"></div>
+    </body>
+</html>

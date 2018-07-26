@@ -1,0 +1,30 @@
+@charset "UTF-8";
+
+body {
+background-color: #341b1b;
+color: #ffffff;
+font-size: 1em;
+}
+
+h1{
+font-size:2em;
+text-align:center;
+}
+
+h2{
+font-size:1.5em;
+text-align:center;
+}
+
+#results{
+margin: auto;
+width: 50%;
+color: white;
+font-size: 1.3em;
+text-align:center;
+}
+
+footer{
+text-align: center;
+font-size: .75em;
+}
