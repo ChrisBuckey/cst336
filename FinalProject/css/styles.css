@@ -1,0 +1,70 @@
+@charset "UTF-8";
+
+
+#homePage, #menuBody{
+    background-image: url("../Images/wood.jpeg");
+    background-size:cover;
+    color: white !important;
+    
+}
+
+.jumbotron{
+    background-color: rgb(211, 207, 95, 0.5) !important;
+}
+
+.instructions{
+    display: block;
+    margin-left: auto;
+    margin-right:auto;
+    text-align:center;
+    text-shadow: 4px 4px 10px black !important;
+    
+}
+#loginBox{
+    color: black !important;
+}
+
+#carousel-example-generic
+{
+     margin: 0 auto;   
+     width: 700px;
+}
+
+/*li*/
+/*{*/
+/*   display: inline;*/
+/*}*/
+
+footer, #hr_footer, #csumb{
+    color: white;
+    font-size:12px;
+    clear: left;
+    text-align: center;
+}
+#hr_footer{
+    width:25%;
+}
+
+.shopping-cart-box
+{
+    display: block;
+}
+
+.close-shopping-cart-box
+{
+    /*display: inline;*/
+}
+
+#shopping-cart-results
+{
+    
+}
+
+/*menu.php styles*/
+#menu, #results{
+    text-align: center;
+    width: 100%;
+    padding: 22px 30px;
+    margin: 8px 0;
+    border: none;
+}
