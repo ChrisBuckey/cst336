@@ -47,6 +47,7 @@
         $namedParameters[':courseId'] = $courseId;
         $statement = $conn->prepare($sql);
         $statement->execute($namedParameters);
+        echo "<h4>Product " . $itemName . " Added!</h4>";
     }
 ?>
 
@@ -78,6 +79,7 @@
         <form>
             <strong>Item Name</strong><input type="text" class="form-control" name="itemName"><br>
             <strong>Description</strong><textarea name="description" class="form-control" cols=50 rows=4></textarea><br>
+            <strong>Image URL</strong><input type="text" class="form-control" name="productImage"><br>
             <strong>Price</strong><input type="text" class="form-control" name="price"><br>
             <strong>Category</strong><select name="courseId" class="form-control">
                 <option value="">Select One</option>

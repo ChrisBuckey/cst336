@@ -51,7 +51,7 @@
         }
     }
     
-    if(isset($_GET['updateProduct']))
+    if(isset($_GET['updateItem']))
     {
         $sql = "UPDATE cat_menuItems
                 SET itemName = :itemName,
@@ -92,7 +92,7 @@
             <strong>Category</strong><select name="catId" class="form-control">
                 <option value="">Select One</option>
                 <?php getCategories( $product['courseId'] ); ?>
-            </select><br />\
+            </select><br />
             <input type="submit" name="updateItem" class='btn btn-primary' value="Update Item">
         </form>
         
